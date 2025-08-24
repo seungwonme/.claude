@@ -1,0 +1,57 @@
+{
+  "env": {
+    "MAX_MCP_OUTPUT_TOKENS": "100000"
+  },
+  "model": "opusplan",
+  "statusLine": {
+    "type": "command",
+    "command": "~/.claude/statusline.sh",
+    "padding": 0
+  },
+  "hooks": {
+    "UserPromptSubmit": [
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "~/.claude/hooks/user_prompt_submit"
+          }
+        ]
+      }
+    ],
+    "Notification": [
+      {
+        "matcher": "*",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "afplay /System/Library/Sounds/Funk.aiff"
+          }
+        ]
+      }
+    ],
+    "Stop": [
+      {
+        "matcher": "*",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "afplay /System/Library/Sounds/Funk.aiff"
+          }
+        ]
+      }
+    ],
+    "SubagentStop": [
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "afplay /System/Library/Sounds/Submarine.aiff"
+          }
+        ]
+      }
+    ]
+  }
+}
