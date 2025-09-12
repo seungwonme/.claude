@@ -2,12 +2,14 @@
   "env": {
     "MAX_MCP_OUTPUT_TOKENS": "100000"
   },
-  "model": "opusplan",
-  "statusLine": {
-    "type": "command",
-    "command": "~/.claude/statusline.sh",
-    "padding": 0
+  "permissions": {
+    "allow": [
+      "WebSearch",
+      "mcp__context7__resolve-library-id",
+      "mcp__context7__get-library-docs"
+    ]
   },
+  "model": "opusplan",
   "hooks": {
     "UserPromptSubmit": [
       {
@@ -53,5 +55,10 @@
         ]
       }
     ]
+  },
+  "statusLine": {
+    "type": "command",
+    "command": "bunx -y ccstatusline@latest",
+    "padding": 0
   }
 }
