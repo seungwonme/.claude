@@ -5,3 +5,7 @@ projects/
 shell-snapshots/
 statsig/
 todos/
+prompts/
+
+file-history/
+history.jsonl
