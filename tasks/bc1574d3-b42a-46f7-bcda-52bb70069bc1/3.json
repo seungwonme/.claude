@@ -1,0 +1,9 @@
+{
+  "id": "3",
+  "subject": "Phase 3: Generators 패키지 확장",
+  "description": "game_state.py, game_planner.py, game_assets.py, game_video_generator.py, game_concatenator.py 신규 생성. gemini_planner.py에 plan_game_scripts 함수 추가.",
+  "activeForm": "Generators 패키지 확장 중",
+  "status": "completed",
+  "blocks": [],
+  "blockedBy": []
+}

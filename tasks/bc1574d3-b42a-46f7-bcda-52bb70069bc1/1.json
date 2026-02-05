@@ -1,0 +1,9 @@
+{
+  "id": "1",
+  "subject": "Phase 1: 모델 확장 (job_type, GameFrame)",
+  "description": "VideoGenerationJob에 job_type, character_image, game_name, user_prompt 필드 추가. GameFrame 모델 신규 생성. 마이그레이션 적용.",
+  "activeForm": "모델 확장 중",
+  "status": "completed",
+  "blocks": [],
+  "blockedBy": []
+}

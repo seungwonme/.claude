@@ -1,8 +1,30 @@
 #!/bin/bash
 
 # 사용자 프롬프트 저장 스크립트
-timestamp=$(date +"%Y%m%d_%H%M%S")
-mkdir -p ./prompts
-echo $(whoami) > "./prompts/${timestamp}.md"
-echo "" >> "./prompts/${timestamp}.md"
-jq -r '.prompt' >> "./prompts/${timestamp}.md"
+# 각 프로젝트의 prompts/ 디렉토리에 날짜별 JSON으로 누적 저장
+
+# stdin에서 전체 JSON 읽기
+input=$(cat)
+
+# cwd와 prompt 추출
+cwd=$(echo "$input" | jq -r '.cwd')
+prompt=$(echo "$input" | jq -r '.prompt')
+user=$(whoami)
+
+# 프로젝트 디렉토리에 prompts 폴더 생성
+PROMPTS_DIR="${cwd}/prompts"
+mkdir -p "$PROMPTS_DIR"
+
+today=$(date +"%Y-%m-%d")
+time_now=$(date +"%H:%M:%S")
+json_file="$PROMPTS_DIR/${today}.json"
+
+# 새 엔트리 생성
+new_entry=$(jq -n --arg time "$time_now" --arg user "$user" --arg prompt "$prompt" '{time: $time, user: $user, prompt: $prompt}')
+
+# 파일이 없으면 새로 생성, 있으면 누적
+if [[ -f "$json_file" ]]; then
+    jq --argjson entry "$new_entry" '. += [$entry]' "$json_file" > "${json_file}.tmp" && mv "${json_file}.tmp" "$json_file"
+else
+    echo "[$new_entry]" | jq '.' > "$json_file"
+fi

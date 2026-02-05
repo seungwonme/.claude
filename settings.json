@@ -1,18 +1,47 @@
 {
   "env": {
     "MAX_MCP_OUTPUT_TOKENS": "100000",
-    "CLAUDE_CODE_MAX_OUTPUT_TOKENS": "100000"
+    "CLAUDE_CODE_MAX_OUTPUT_TOKENS": "32000"
   },
   "permissions": {
     "allow": [
       "WebSearch",
       "WebFetch",
+      "Bash(mkdir:*)",
+      "Bash(lsr:*)",
+      "Bash(find:*)",
+      "Bash(rg:*)",
+      "Bash(ls:*)",
+      "Bash(touch:*)",
+      "Bash(git config:*)",
       "mcp__context7",
       "mcp__chrome-devtools",
-      "Bash(mkdir:*)",
-      "Bash(ls:*)",
-      "Bash(cat:*)",
-      "Bash(touch:*)"
+      "mcp__sequential-thinking",
+      "mcp__tavily-mcp__tavily_search",
+      "mcp__tavily-mcp__tavily_extract",
+      "mcp__supabase__get_logs",
+      "mcp__supabase__search_docs",
+      "mcp__supabase__list_tables",
+      "mcp__notionApi__API-retrieve-a-page",
+      "mcp__notionApi__API-get-block-children",
+      "mcp__notionApi__API-retrieve-a-database",
+      "mcp__notionApi__API-post-database-query",
+      "mcp__notionApi__API-post-search",
+      "mcp__TalkToFigma__join_channel",
+      "mcp__TalkToFigma__get_node_info",
+      "mcp__TalkToFigma__clone_node",
+      "mcp__TalkToFigma__scan_text_nodes"
+    ],
+    "deny": [
+      "Read(.env.local)",
+      "Read(.env.production)",
+      "Bash(echo:*)",
+      "Bash(npm run dev)",
+      "Bash(yarn dev)",
+      "Bash(pnpm run dev)",
+      "Bash(pnpm dev)",
+      "Bash(bun run dev)",
+      "mcp__supabase__apply_migration"
     ]
   },
   "hooks": {
@@ -66,5 +95,6 @@
     "command": "bunx -y ccstatusline@latest",
     "padding": 0
   },
-  "alwaysThinkingEnabled": true
+  "alwaysThinkingEnabled": true,
+  "model": "haiku"
 }

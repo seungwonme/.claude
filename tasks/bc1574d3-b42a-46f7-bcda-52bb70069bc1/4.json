@@ -1,0 +1,9 @@
+{
+  "id": "4",
+  "subject": "Phase 4: Services 확장",
+  "description": "game_services.py 신규 생성, services.py에 job_type 분기 로직 추가",
+  "activeForm": "Services 확장 중",
+  "status": "completed",
+  "blocks": [],
+  "blockedBy": []
+}

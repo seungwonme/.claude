@@ -6,6 +6,16 @@ shell-snapshots/
 statsig/
 todos/
 prompts/
+debug/
 
 file-history/
 history.jsonl
+.credentials.json
+stats-cache.json
+
+plans/
+chrome/
+
+paste-cache/
+cache/
+telemetry/

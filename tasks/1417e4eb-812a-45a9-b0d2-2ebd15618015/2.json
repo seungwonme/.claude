@@ -1,0 +1,9 @@
+{
+  "id": "2",
+  "subject": "Implement fal.ai image and video generation",
+  "description": "Create fal.ai client, API routes for image/video generation, and React hooks for calling the APIs",
+  "activeForm": "Implementing AI generation",
+  "status": "completed",
+  "blocks": [],
+  "blockedBy": []
+}
