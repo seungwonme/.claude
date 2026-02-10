@@ -93,9 +93,7 @@ def main():
                 if full_msg['attachments']:
                     print(f"Attachments: {', '.join(a['filename'] for a in full_msg['attachments'])}")
                 print("-" * 60)
-                print(full_msg['body'][:500])
-                if len(full_msg['body']) > 500:
-                    print("... (truncated)")
+                print(full_msg['body'])
                 print("=" * 60)
                 print()
             else:

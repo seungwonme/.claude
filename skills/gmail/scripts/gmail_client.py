@@ -307,7 +307,10 @@ class GmailClient:
 
         # Cache the result
         if use_cache and self._cache and format in ("full", "metadata"):
-            self._cache.set_message(self.account_name, message_id, parsed)
+            self._cache.set_message(
+                self.account_name, message_id, parsed,
+                has_body=(format == "full"),
+            )
 
         return parsed
 

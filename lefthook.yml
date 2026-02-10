@@ -6,12 +6,12 @@ pre-commit:
   commands:
     biome-check:
       glob: "*.{js,jsx,ts,tsx,json,jsonc}"
-      run: pnpm biome check --write --no-errors-on-unmatched --files-ignore-unknown=true {staged_files}
+      run: pnpx biome check --write --no-errors-on-unmatched --files-ignore-unknown=true {staged_files}
       stage_fixed: true
 
     typecheck:
       glob: "*.{ts,tsx}"
-      run: pnpm tsc --noEmit
+      run: pnpx tsc --noEmit
       stage_fixed: false
 
     # .env 파일 커밋 방지

@@ -125,6 +125,9 @@ class EmailCache:
             )
 
             if self._is_fresh(data.get("cached_at"), ttl_hours):
+                # full format 요청인데 캐시에 body가 없으면 miss 처리
+                if not metadata_only and not data.get("has_body", False):
+                    return None
                 return data.get("message")
 
             # 만료된 캐시 삭제
@@ -139,6 +142,7 @@ class EmailCache:
         account: str,
         message_id: str,
         message: dict,
+        has_body: bool = True,
     ) -> None:
         """메시지 캐시.
 
@@ -146,6 +150,7 @@ class EmailCache:
             account: 계정 이름
             message_id: 메시지 ID
             message: 메시지 데이터
+            has_body: 본문 포함 여부 (full format인 경우 True)
         """
         with self._lock:
             account_dir = self.cache_dir / account / "messages"
@@ -154,6 +159,7 @@ class EmailCache:
             cache_file = self._message_path(account, message_id)
             cache_data = {
                 "cached_at": datetime.now().isoformat(),
+                "has_body": has_body,
                 "message": message,
             }
 
