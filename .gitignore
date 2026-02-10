@@ -2,11 +2,15 @@
 ide/
 plugins/
 projects/
+tasks/
+usage-data/
+teams/
 shell-snapshots/
 statsig/
 todos/
 prompts/
 debug/
+session-env/
 
 file-history/
 history.jsonl

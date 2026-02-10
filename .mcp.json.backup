@@ -1,0 +1,234 @@
+{
+  "mcpServers": {
+    "context7": {
+      "command": "bunx",
+      "args": [
+        "@upstash/context7-mcp"
+      ]
+    },
+    "chrome-devtools": {
+      "command": "bunx",
+      "args": [
+        "chrome-devtools-mcp@latest"
+      ]
+    },
+    "supabase": {
+      "command": "bunx",
+      "args": [
+        "@supabase/mcp-server-supabase@latest",
+        "--read-only",
+        "--project-ref=<project-ref>"
+      ],
+      "env": {
+        "SUPABASE_ACCESS_TOKEN": "<personal-access-token>"
+      }
+    },
+    "tosspayments-integration-guide": {
+      "command": "bunx",
+      "args": [
+        "@tosspayments/integration-guide-mcp@latest"
+      ]
+    },
+    "firebase": {
+      "command": "bunx",
+      "args": [
+        "firebase-tools@latest",
+        "experimental:mcp"
+      ]
+    },
+    "figma-desktop": {
+      "type": "http",
+      "url": "http://127.0.0.1:3845/mcp"
+    },
+    "TalkToFigma": {
+      "command": "bunx",
+      "args": [
+        "cursor-talk-to-figma-mcp@latest"
+      ]
+    },
+    "sequential-thinking": {
+      "command": "bunx",
+      "args": [
+        "@modelcontextprotocol/server-sequential-thinking"
+      ]
+    },
+    "deepwiki": {
+      "serverUrl": "https://mcp.deepwiki.com/sse"
+    },
+    "tavily-mcp": {
+      "command": "bunx",
+      "args": [
+        "tavily-mcp@latest"
+      ],
+      "env": {
+        "TAVILY_API_KEY": "your-api-key-here"
+      }
+    },
+    "arxiv-server": {
+      "command": "uv",
+      "args": [
+        "--directory",
+        "/ABSOLUTE/PATH/TO/PARENT/FOLDER/arxiv-mcp-server/src/arxiv_server",
+        "run",
+        "server.py"
+      ],
+      "env": {
+        "DOWNLOAD_PATH": "/ABSOLUTE/PATH/TO/DOWNLOADS/FOLDER"
+      }
+    },
+    "excel": {
+      "command": "uvx",
+      "args": [
+        "excel-mcp-server",
+        "stdio"
+      ]
+    },
+    "financial-datasets": {
+      "command": "/path/to/uv",
+      "args": [
+        "--directory",
+        "/absolute/path/to/financial-datasets-mcp",
+        "run",
+        "server.py"
+      ]
+    },
+    "allpepper-memory-bank": {
+      "command": "bunx",
+      "args": [
+        "-y",
+        "@allpepper/memory-bank-mcp"
+      ],
+      "env": {
+        "MEMORY_BANK_ROOT": "/Users/seungwonan/Dev/memory-bank"
+      },
+      "disabled": false,
+      "autoApprove": [
+        "memory_bank_read",
+        "memory_bank_write",
+        "memory_bank_update",
+        "list_projects",
+        "list_project_files"
+      ]
+    },
+    "mem0-mcp": {
+      "command": "bunx",
+      "args": [
+        "@mem0/mcp"
+      ],
+      "env": {
+        "MEM0_API_KEY": "YOUR-API-KEY-HERE"
+      }
+    },
+    "ddg-search": {
+      "command": "uvx",
+      "args": [
+        "duckduckgo-mcp-server"
+      ]
+    },
+    "notionApi": {
+      "command": "bunx",
+      "args": [
+        "@notionhq/notion-mcp-server"
+      ],
+      "env": {
+        "OPENAPI_MCP_HEADERS": "{\"Authorization\": \"Bearer your_notion_api_key\", \"Notion-Version\": \"2022-06-28\" }"
+      }
+    },
+    "n8n-mcp": {
+      "command": "bunx",
+      "args": [
+        "n8n-mcp"
+      ],
+      "env": {
+        "MCP_MODE": "stdio",
+        "LOG_LEVEL": "error",
+        "DISABLE_CONSOLE_OUTPUT": "true",
+        "N8N_API_URL": "https://your-n8n-instance.com",
+        "N8N_API_KEY": "your-api-key"
+      }
+    },
+    "Microsoft Learn MCP Server": {
+      "httpUrl": "https://learn.microsoft.com/api/mcp"
+    },
+    "google-sheets": {
+      "command": "uvx",
+      "args": [
+        "mcp-google-sheets@latest"
+      ],
+      "env": {
+        "SERVICE_ACCOUNT_PATH": "/path/to/your/service-account-key.json",
+        "DRIVE_FOLDER_ID": "YOUR_DRIVE_FOLDER_ID"
+      }
+    },
+    "naver-search": {
+      "command": "bunx",
+      "args": [
+        "@isnow890/naver-search-mcp"
+      ],
+      "env": {
+        "NAVER_CLIENT_ID": "your_client_id",
+        "NAVER_CLIENT_SECRET": "your_client_secret"
+      }
+    },
+    "gdrive": {
+      "command": "bunx",
+      "args": [
+        "@modelcontextprotocol/server-gdrive"
+      ],
+      "env": {
+        "GDRIVE_CREDENTIALS_PATH": "/path/to/.gdrive-server-credentials.json"
+      }
+    },
+    "hf-mcp-server": {
+      "command": "bunx",
+      "args": [
+        "mcp-remote",
+        "https://huggingface.co/mcp",
+        "--header",
+        "Authorization: Bearer <YOUR_HF_TOKEN>"
+      ]
+    },
+    "actors-mcp-server": {
+      "command": "bunx",
+      "args": [
+        "@apify/actors-mcp-server"
+      ],
+      "env": {
+        "APIFY_TOKEN": "<APIFY_TOKEN>"
+      }
+    },
+    "blender": {
+      "command": "uvx",
+      "args": [
+        "blender-mcp"
+      ]
+    },
+    "filesystem": {
+      "command": "bunx",
+      "args": [
+        "@modelcontextprotocol/server-filesystem",
+        "/Users/username/Desktop",
+        "/path/to/other/allowed/dir"
+      ]
+    },
+    "gmail": {
+      "command": "bunx",
+      "args": [
+        "@gongrzhe/server-gmail-autoauth-mcp"
+      ]
+    },
+    "Railway": {
+      "command": "bunx",
+      "args": [
+        "@railway/mcp-server"
+      ]
+    },
+    "repomix": {
+      "command": "bunx",
+      "args": [
+        "repomix",
+        "--mcp"
+      ]
+    }
+  }
+}

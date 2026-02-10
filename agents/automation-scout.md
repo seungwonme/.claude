@@ -1,0 +1,1 @@
+/Users/seungwonan/.claude/skills/session-wrap/agents/automation-scout.md

@@ -1,7 +1,10 @@
 {
   "env": {
     "MAX_MCP_OUTPUT_TOKENS": "100000",
-    "CLAUDE_CODE_MAX_OUTPUT_TOKENS": "32000"
+    "CLAUDE_CODE_MAX_OUTPUT_TOKENS": "32000",
+    "ENABLE_TOOL_SEARCH": "auto:5",
+    "CLAUDE_CODE_EXPERIMENTAL_AGENT_TEAMS": "1",
+    "CLAUDE_PLUGIN_ROOT": "/Users/seungwonan/.claude"
   },
   "permissions": {
     "allow": [
@@ -51,7 +54,16 @@
         "hooks": [
           {
             "type": "command",
-            "command": "~/.claude/hooks/user_prompt_submit"
+            "command": "bash ${CLAUDE_PLUGIN_ROOT}/hook-utils/user_prompt_submit"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash ${CLAUDE_PLUGIN_ROOT}/hook-utils/doubt/hooks/scripts/doubt-detector.sh"
           }
         ]
       }
@@ -76,6 +88,24 @@
             "command": "afplay /System/Library/Sounds/Funk.aiff"
           }
         ]
+      },
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "uv run --project ${CLAUDE_PLUGIN_ROOT}/hook-utils/say-summary python3 ${CLAUDE_PLUGIN_ROOT}/hook-utils/say-summary/scripts/say-summary.py",
+            "timeout": 30
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash ${CLAUDE_PLUGIN_ROOT}/hook-utils/doubt/hooks/scripts/doubt-validator.sh"
+          }
+        ]
       }
     ],
     "SubagentStop": [
@@ -96,5 +126,5 @@
     "padding": 0
   },
   "alwaysThinkingEnabled": true,
-  "model": "haiku"
+  "model": "sonnet"
 }
