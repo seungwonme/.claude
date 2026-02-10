@@ -13,13 +13,14 @@ debug/
 session-env/
 
 file-history/
-history.jsonl
-.credentials.json
-stats-cache.json
-
 plans/
 chrome/
 
 paste-cache/
 cache/
 telemetry/
+
+history.jsonl
+.credentials.json
+stats-cache.json
+statusline.log
