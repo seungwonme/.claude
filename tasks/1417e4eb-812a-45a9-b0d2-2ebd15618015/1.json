@@ -1,9 +1,0 @@
-{
-  "id": "1",
-  "subject": "Create Zustand store and React Flow canvas",
-  "description": "Create canvasSlice, generationSlice, uiSlice for state management and implement React Flow canvas with basic nodes",
-  "activeForm": "Creating store and canvas",
-  "status": "completed",
-  "blocks": [],
-  "blockedBy": []
-}

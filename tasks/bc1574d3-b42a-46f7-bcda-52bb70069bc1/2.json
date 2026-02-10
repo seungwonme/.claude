@@ -1,9 +1,0 @@
-{
-  "id": "2",
-  "subject": "Phase 2: Status 설정 확장",
-  "description": "status_config.py에 GAME_* 상수 추가, constants.py에 GAME_SEGMENT_* 상수 추가",
-  "activeForm": "Status 설정 확장 중",
-  "status": "completed",
-  "blocks": [],
-  "blockedBy": []
-}

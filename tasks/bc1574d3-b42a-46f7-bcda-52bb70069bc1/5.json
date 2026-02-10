@@ -1,9 +1,0 @@
-{
-  "id": "5",
-  "subject": "Phase 5: Admin 확장",
-  "description": "admin.py에 조건부 fieldsets, 새 액션, 게임 타입 진행 표시 추가",
-  "activeForm": "Admin 확장 중",
-  "status": "completed",
-  "blocks": [],
-  "blockedBy": []
-}

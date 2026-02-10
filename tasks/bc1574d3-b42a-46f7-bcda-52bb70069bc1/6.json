@@ -1,9 +1,0 @@
-{
-  "id": "6",
-  "subject": "Phase 6: 유틸리티 확장 및 테스트",
-  "description": "video.py에 concatenate_with_fade() 함수 추가, 테스트 코드 작성",
-  "activeForm": "유틸리티 확장 및 테스트 중",
-  "status": "pending",
-  "blocks": [],
-  "blockedBy": []
-}

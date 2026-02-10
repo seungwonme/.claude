@@ -1,9 +1,0 @@
-{
-  "id": "3",
-  "subject": "Implement LangGraph workflow and FFmpeg processing",
-  "description": "Create LangGraph workflow for generation pipelines and FFmpeg.wasm hooks for video processing",
-  "activeForm": "Implementing LangGraph and FFmpeg",
-  "status": "in_progress",
-  "blocks": [],
-  "blockedBy": []
-}
