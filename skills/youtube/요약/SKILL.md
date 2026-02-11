@@ -25,6 +25,18 @@ scripts/extract_transcript.sh "<URL>" [output_dir]
 
 우선순위: 수동 자막(ko→en) > 자동 생성 자막(ko→en)
 
+### 2-1. SRT → TXT 변환
+
+```bash
+scripts/srt_to_txt.sh <input.srt> [output.txt]
+```
+
+SRT 자막을 깔끔한 TXT로 압축:
+- 시퀀스 번호/타임스탬프/HTML 태그 제거
+- 자동 자막의 중복 라인 제거
+- 1분 간격 `[HH:MM]` 마커 삽입
+- 약 70-80% 라인 수 감소
+
 ### 3. 맥락 파악 (WebSearch)
 
 웹 검색으로 고유명사 정확한 표기 수집:
@@ -117,5 +129,6 @@ processed_at: {처리 일시}
 
 - `scripts/extract_metadata.sh` - 메타데이터 추출
 - `scripts/extract_transcript.sh` - 자막 추출
+- `scripts/srt_to_txt.sh` - SRT → TXT 변환 (중복 제거, 타임스탬프 마커)
 - `references/quiz-patterns.md` - 퀴즈 문제 유형 상세
 - `references/deep-research.md` - Deep Research 워크플로우

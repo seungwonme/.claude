@@ -3,12 +3,15 @@
 # 토큰 파일은 accounts/{name}.json에 별도 저장됩니다.
 
 accounts:
-  executive:
+  contact:
     email: contact@demodev.io
-    description: DemoDev executive
+    description: DemoDev contact
   work:
     email: seunan@demodev.io
     description: DemoDev work
+  executive:
+    email: demo.dev.connect@gmail.com
+    description: ''
   personal:
     email: senugw0u@gmail.com
     description: Personal Gmail
