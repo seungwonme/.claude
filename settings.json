@@ -21,6 +21,7 @@
       "mcp__chrome-devtools",
       "mcp__sequential-thinking",
       "mcp__tavily-mcp__tavily_search",
+      "mcp__tavily-mcp__tavily_research",
       "mcp__tavily-mcp__tavily_extract",
       "mcp__supabase__get_logs",
       "mcp__supabase__search_docs",
@@ -45,7 +46,8 @@
       "Bash(pnpm dev)",
       "Bash(bun run dev)",
       "mcp__supabase__apply_migration"
-    ]
+    ],
+    "defaultMode": "default"
   },
   "hooks": {
     "UserPromptSubmit": [
@@ -93,7 +95,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "uv run --project ${CLAUDE_PLUGIN_ROOT}/hook-utils/say-summary python3 ${CLAUDE_PLUGIN_ROOT}/hook-utils/say-summary/scripts/say-summary.py",
+            "command": "uv run --project /Users/seungwonan/.claude/hook-utils/say-summary python3 /Users/seungwonan/.claude/hook-utils/say-summary/scripts/say-summary.py",
             "timeout": 30
           }
         ]
@@ -126,5 +128,5 @@
     "padding": 0
   },
   "alwaysThinkingEnabled": true,
-  "model": "haiku"
+  "language": "Korean"
 }

@@ -22,7 +22,9 @@ uv sync
 ### 기본 사용 (단일 페이지 크롤링)
 
 ```bash
+uv run python -m src.crawl4ai_mcp_server.cli crawl https://docs-pay.toss.im/guide/create -r -px https://docs-pay.toss.im/guide
 # 콘솔에 마크다운 출력
+
 uv run cli.py crawl https://docs.crawl4ai.com
 
 # 파일로 저장
@@ -49,13 +51,13 @@ uv run cli.py crawl https://developers.figma.com/docs/figma-mcp-server \
 
 ### CLI 옵션
 
-| 옵션 | 단축 | 설명 | 기본값 |
-|------|------|------|--------|
-| `--output-dir` | `-o` | 출력 디렉토리 | 도메인명 (Deep Crawl) / 미지정 시 콘솔 출력 (단일 페이지) |
-| `--recursive` | `-r` | Deep Crawl 모드 활성화 | `False` |
-| `--max-pages` | `-p` | 최대 크롤링 페이지 수 (Deep Crawl 전용) | `100` |
-| `--max-depth` | `-d` | 최대 크롤링 깊이 (Deep Crawl 전용) | `2` |
-| `--prefix` | `-px` | URL 프리픽스 필터 (Deep Crawl 전용) | `None` |
+| 옵션           | 단축  | 설명                                    | 기본값                                                    |
+| -------------- | ----- | --------------------------------------- | --------------------------------------------------------- |
+| `--output-dir` | `-o`  | 출력 디렉토리                           | 도메인명 (Deep Crawl) / 미지정 시 콘솔 출력 (단일 페이지) |
+| `--recursive`  | `-r`  | Deep Crawl 모드 활성화                  | `False`                                                   |
+| `--max-pages`  | `-p`  | 최대 크롤링 페이지 수 (Deep Crawl 전용) | `100`                                                     |
+| `--max-depth`  | `-d`  | 최대 크롤링 깊이 (Deep Crawl 전용)      | `2`                                                       |
+| `--prefix`     | `-px` | URL 프리픽스 필터 (Deep Crawl 전용)     | `None`                                                    |
 
 ### 설정 프리셋 확인
 

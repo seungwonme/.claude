@@ -1,6 +1,6 @@
 ---
 name: frontend
-description: Frontend development best practices and tools. Routes to the appropriate sub-skill. Trigger on "React", "Next.js", "프론트엔드", "컴포넌트", "deploy", "배포", "UI 리뷰", "성능 최적화", "React Native", "모바일 앱", "풀스택", "FSD", "Feature-Sliced Design", "Playwright", "E2E 테스트". Sub-skills — react-best-practices (React/Next.js performance optimization), composition-patterns (React composition and component architecture), react-native-skills (React Native/Expo mobile best practices), web-design-guidelines (UI/UX audit and accessibility review), vercel-deploy-claimable (Vercel deployment), nextjs-fullstack (Next.js 15 fullstack with FSD architecture, ShadCN, Jotai, Playwright, "풀스택 개발", "FSD 구조", "E2E 테스트").
+description: Frontend development best practices and tools. Routes to the appropriate sub-skill. Trigger on "React", "Next.js", "프론트엔드", "컴포넌트", "deploy", "배포", "UI 디자인", "UI 리뷰", "성능 최적화", "React Native", "모바일 앱", "풀스택", "FSD", "Feature-Sliced Design", "Playwright", "E2E 테스트", "랜딩페이지", "웹 디자인", "인터페이스 디자인", "frontend design". Sub-skills — react-best-practices (React/Next.js performance optimization), composition-patterns (React composition and component architecture), react-native-skills (React Native/Expo mobile best practices), frontend-design (distinctive, production-grade frontend interface design with bold aesthetics), vercel-deploy-claimable (Vercel deployment), nextjs-fullstack (Next.js 15 fullstack with FSD architecture, ShadCN, Jotai, Playwright, "풀스택 개발", "FSD 구조", "E2E 테스트").
 ---
 
 # Frontend: Development Skills Router
@@ -15,7 +15,7 @@ Route to the correct sub-skill based on the user's need.
 | **react-best-practices**     | React/Next.js performance optimization, data fetching, SSR  | `react-best-practices/SKILL.md`         |
 | **composition-patterns**     | Component architecture, compound components, prop refactor  | `composition-patterns/SKILL.md`         |
 | **react-native-skills**      | React Native/Expo mobile app development and optimization   | `react-native-skills/SKILL.md`          |
-| **web-design-guidelines**    | UI/UX audit, accessibility, design best practices review    | `web-design-guidelines/SKILL.md`        |
+| **frontend-design**          | Distinctive UI design, creative aesthetics, visual identity  | `frontend-design/SKILL.md`             |
 | **vercel-deploy-claimable**  | Deploy app to Vercel, get preview URL                       | `vercel-deploy-claimable/SKILL.md`      |
 
 ## Decision Logic
@@ -24,7 +24,7 @@ Route to the correct sub-skill based on the user's need.
 2. **React/Next.js 코드 작성·리뷰·최적화** → `react-best-practices`
 3. **컴포넌트 설계·리팩토링·아키텍처** → `composition-patterns`
 4. **React Native/Expo 모바일 개발** → `react-native-skills`
-5. **UI/UX 감사·접근성·디자인 검토** → `web-design-guidelines`
+5. **독창적 UI 디자인·미학적 인터페이스·시각 아이덴티티** → `frontend-design`
 6. **Vercel 배포** → `vercel-deploy-claimable`
 
 If unclear which sub-skill fits, use AskUserQuestion:
@@ -40,8 +40,8 @@ questions:
         description: "성능 최적화, 데이터 페칭, 번들 사이즈, SSR/CSR 패턴"
       - label: "컴포넌트 아키텍처"
         description: "컴포넌트 구조 설계, compound components, prop 리팩토링"
-      - label: "React Native / UI 리뷰 / 배포"
-        description: "모바일 앱, 접근성 감사, Vercel 배포"
+      - label: "UI 디자인 / React Native / 배포"
+        description: "독창적 인터페이스 디자인, 모바일 앱, Vercel 배포"
     multiSelect: false
 ```
 

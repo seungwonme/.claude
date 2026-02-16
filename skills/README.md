@@ -26,3 +26,5 @@ Claude Desktop에서 Slack MCP Server를 사용하여 Slack API를 호출할 수
 ---
 
 ## [daymade - claude code skills](https://github.com/daymade/claude-code-skills)
+
+## [obra - superpowers](https://github.com/obra/superpowers)

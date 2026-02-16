@@ -20,6 +20,7 @@ image-cache/
 paste-cache/
 cache/
 telemetry/
+transcripts/
 
 history.jsonl
 .credentials.json

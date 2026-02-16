@@ -75,7 +75,7 @@ processed_at: {처리 일시}
 
 ### 6. 파일 저장
 
-위치: `research/readings/youtube/{YYYY-MM-DD}-{sanitized-title}.md`
+위치: `/tmp/agents/youtube/{YYYY-MM-DD}-{sanitized-title}.md`
 
 ### 7. 학습 퀴즈
 
