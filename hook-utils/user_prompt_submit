@@ -7,9 +7,30 @@
 input=$(cat)
 
 # cwd와 prompt 추출
-cwd=$(echo "$input" | jq -r '.cwd')
-prompt=$(echo "$input" | jq -r '.prompt')
+cwd=$(echo "$input" | jq -r '.cwd // ""')
+prompt=$(echo "$input" | jq -r '.prompt // ""')
 user=$(whoami)
+
+if [[ -z "$cwd" ]]; then
+    cwd="$PWD"
+fi
+
+# 프롬프트 내 민감 정보 마스킹
+mask_sensitive_text() {
+    perl -CS -pe '
+        s/\bsk-ant-[A-Za-z0-9_-]{10,}\b/[REDACTED_ANTHROPIC_KEY]/g;
+        s/\bsk-[A-Za-z0-9]{20,}\b/[REDACTED_API_KEY]/g;
+        s/\b(?:ghp|gho|ghu|ghs|ghr)_[A-Za-z0-9]{20,}\b/[REDACTED_GITHUB_TOKEN]/g;
+        s/\bgithub_pat_[A-Za-z0-9_]{20,}\b/[REDACTED_GITHUB_TOKEN]/g;
+        s/\b(?:AKIA|ASIA)[0-9A-Z]{16}\b/[REDACTED_AWS_ACCESS_KEY]/g;
+        s/\beyJ[A-Za-z0-9_-]{10,}\.[A-Za-z0-9_-]{10,}\.[A-Za-z0-9_-]{10,}\b/[REDACTED_JWT]/g;
+        s/\b(Bearer\s+)[A-Za-z0-9._~+\/-]{12,}/${1}[REDACTED]/gi;
+        s/\b(authorization\s*[:=]\s*bearer\s+)[A-Za-z0-9._~+\/-]{12,}/${1}[REDACTED]/gi;
+        s/\b(password|passwd|pwd|api[_-]?key|token|secret|client[_-]?secret)\b\s*([:=])\s*([^\s,;\"\047\)\]]+)/${1}${2}[REDACTED]/gi;
+    '
+}
+
+masked_prompt=$(printf '%s' "$prompt" | mask_sensitive_text)
 
 # 프로젝트 디렉토리에 prompts 폴더 생성
 PROMPTS_DIR="${cwd}/prompts"
@@ -20,7 +41,7 @@ time_now=$(date +"%H:%M:%S")
 json_file="$PROMPTS_DIR/${today}.json"
 
 # 새 엔트리 생성
-new_entry=$(jq -n --arg time "$time_now" --arg user "$user" --arg prompt "$prompt" '{time: $time, user: $user, prompt: $prompt}')
+new_entry=$(jq -n --arg time "$time_now" --arg user "$user" --arg prompt "$masked_prompt" '{time: $time, user: $user, prompt: $prompt}')
 
 # 파일이 없으면 새로 생성, 있으면 누적
 if [[ -f "$json_file" ]]; then

@@ -127,6 +127,11 @@
     "command": "bunx -y ccstatusline@latest",
     "padding": 0
   },
+  "enabledPlugins": {
+    "bkit-starter@bkit-marketplace": true,
+    "bkit@bkit-marketplace": true
+  },
+  "language": "Korean",
   "alwaysThinkingEnabled": true,
-  "language": "Korean"
+  "model": "opus"
 }
